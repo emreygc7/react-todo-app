@@ -45,8 +45,15 @@ const TodoForm = () => {
     }
 
     useEffect(()=> {
+
         const localTodo = localStorage.getItem("todos")
-        setTodos(JSON.parse(localTodo))
+
+        if(localTodo === null) {
+            setTodos(todos)
+        }else {
+            setTodos(JSON.parse(localTodo))
+        }
+
     },[])
 
     useEffect(()=> {
