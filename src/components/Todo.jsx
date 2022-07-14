@@ -14,7 +14,6 @@ const Todo = ({todo}) => {
         }else{
             const deletedTodo = todos.filter(t => t.id !== id)
             setTodos([...deletedTodo])
-            console.log(...deletedTodo);
             toast.error("Todo deleted.")
     
         }
@@ -24,8 +23,6 @@ const Todo = ({todo}) => {
         const editedTodo = todos.find(t => t.id === id )
         setTodo(editedTodo.task)
         setEditId(id)
-        console.log(editedTodo);
-        console.log(editId);
     }
 
     const completeTodo = (id) => {
